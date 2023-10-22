@@ -12,55 +12,42 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header alignwide">
-		<?php if ( is_search() ) : ?>
+    <div class="page-content page-ct-search">
+        <?php
+        // Kiểm tra nếu có tìm kiếm
+        if (is_search()) :
+            echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search' . '</span>';
+            printf(
+                esc_html__('"%s"', 'twentytwentyone'),
+                '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
+            );
+            echo '</h1>';
+        else :
+            // Nếu không phải trang kết quả tìm kiếm, hiển thị tiêu đề mặc định
+            echo '<h1 class="page-title">' . esc_html_e('Nothing here', 'twentytwentyone') . '</h1>';
+        endif;
 
-			<h1 class="page-title">
-				<?php
-				printf(
-					/* translators: %s: Search term. */
-					esc_html__( 'Results for "%s"', 'twentytwentyone' ),
-					'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-				);
-				?>
-			</h1>
-
-		<?php else : ?>
-
-			<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
-
-		<?php endif; ?>
-	</header><!-- .page-header -->
-
-	<div class="page-content default-max-width">
-
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
-			<?php
-			printf(
-				'<p>' . wp_kses(
-					/* translators: %s: Link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'twentytwentyone' ),
-					array(
-						'a' => array(
-							'href' => array(),
-						),
-					)
-				) . '</p>',
-				esc_url( admin_url( 'post-new.php' ) )
-			);
-			?>
-
-		<?php elseif ( is_search() ) : ?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentytwentyone' ); ?></p>
-			<?php get_search_form(); ?>
-
-		<?php else : ?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentytwentyone' ); ?></p>
-			<?php get_search_form(); ?>
-
-		<?php endif; ?>
-	</div><!-- .page-content -->
+        // Kiểm tra nếu đây là trang chính (home) và người dùng có quyền đăng bài viết
+        if (is_home() && current_user_can('publish_posts')) :
+            // Hiển thị hướng dẫn đăng bài viết
+            echo '<p>' . wp_kses(
+                sprintf(__('Ready to publish your first post? <a href="%s">Get started here</a>.', 'twentytwentyone'),
+                esc_url(admin_url('post-new.php'))),
+                array('a' => array('href' => array()))
+            ) . '</p>';
+        // Kiểm tra nếu đây là trang kết quả tìm kiếm
+        elseif (is_search()) :
+            // Hiển thị thông báo không tìm thấy kết quả và biểu mẫu tìm kiếm
+            echo '<p>' . 'We could not find any results for your search. You can give it ' .'<br>'.' another try through the search form below.' . '</p>';
+        else :
+            // Hiển thị thông báo không tìm thấy nội dung và biểu mẫu tìm kiếm
+            echo '<p>' . esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentytwentyone') . '</p>';
+        endif;
+        ?>
+    </div><!-- .page-content -->
+    <div class="search_form">
+        <?php
+			get_search_form(); 
+		?>
+    </div>
 </section><!-- .no-results -->

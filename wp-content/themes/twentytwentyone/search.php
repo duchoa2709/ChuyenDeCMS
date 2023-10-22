@@ -13,35 +13,49 @@ get_header();
 
 if ( have_posts() ) {
 	?>
-	<header class="page-header alignwide">
-		<h1 class="page-title">
-			<?php
-			printf(
-				/* translators: %s: Search term. */
-				esc_html__( 'Results for "%s"', 'twentytwentyone' ),
-				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-			);
+<!-- thay đổi thông báo search được tìm thấy (đã chỉnh sửa) -->
+<h1 class="page-title">
+    <div class="page-ct-search">
+        <?php
+			echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search' . '</span>';
+            printf(
+                esc_html__('"%s"', 'twentytwentyone'),
+                '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
+            );
+            echo '</h1>';
 			?>
-		</h1>
-	</header><!-- .page-header -->
 
-	<div class="search-result-count default-max-width">
-		<?php
-		printf(
-			esc_html(
-				/* translators: %d: The number of search results. */
-				_n(
-					'We found %d result for your search.',
-					'We found %d results for your search.',
-					(int) $wp_query->found_posts,
-					'twentytwentyone'
-				)
-			),
-			(int) $wp_query->found_posts
-		);
+        <!-- Thông báo tìm thấy -->
+        <div class="search-result-count default-max-width">
+			<p class="text-2xl pt-3 font-thin">
+            <?php
+    printf(
+        esc_html(
+            /* translators: %d: Trả về số bài viết tìm thấy được */
+            _n(
+                'We found %d result for your search.',
+                'We found %d results for your search.',
+                (int) $wp_query->found_posts,
+                'twentytwentyone'
+            )
+        ),
+        (int) $wp_query->found_posts
+    );
+    ?>
+	</p>	
+        </div><!-- .search-result-count -->
+    </div>
+
+</h1>
+
+<!-- Thêm search vào trang tìm thấy kế quả -->
+
+<div class="search_form">
+    <?php
+			get_search_form(); 
 		?>
-	</div><!-- .search-result-count -->
-	<?php
+</div>
+<?php
 	// Start the Loop.
 	while ( have_posts() ) {
 		the_post();

@@ -10,7 +10,7 @@
 ?>
 <?php if ( (bool) get_the_author_meta( 'description' ) && post_type_supports( get_post_type(), 'author' ) ) : ?>
 	<div class="author-bio <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
-		<?php echo get_avatar( get_the_author_meta( 'ID' ), '85' ); ?>
+		<?php echo get_avatar( get_the_author_meta( 'ID' ), '10' ); ?>
 		<div class="author-bio-content">
 			<h2 class="author-title">
 			<?php

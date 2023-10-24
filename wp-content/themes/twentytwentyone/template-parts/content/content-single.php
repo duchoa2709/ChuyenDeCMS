@@ -10,11 +10,10 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-    <header class="entry-header alignwide">
+    <header class="alignwide detail">
 
         <div class="row title">
             <div class="col-md-10 col-xs-9">
@@ -26,36 +25,44 @@
                 <div class="headlinesdate">
                     <div class="headlinesdm">
                         <div class="headlinesday">
-							
-							<!-- lấy ngày bài viết -->
-							<?php
+
+                            <!-- lấy ngày bài viết -->
+                            <?php
                             $created_date = get_the_date('d');
                             echo $created_date;
 							?>
 
                         </div>
                         <div class="headlinesmonth">
-						<?php
+                            <?php
                             $created_date = get_the_date('m');
                             echo $created_date;
 							?>
-						</div>
+                        </div>
                     </div>
                     <div class="headlinesyear">'
-					<?php
+                        <?php
                             $created_date = get_the_date('y');
                             echo $created_date;
 							?>
-					</div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <?php twenty_twenty_one_post_thumbnail(); ?>
+
+        <!-- line  -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="overviewline"></div>
+            </div>
+        </div>
+        <!-- end line -->
+
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
+
+    <div class="alignwide">
         <?php
 		the_content();
 

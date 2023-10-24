@@ -27,8 +27,8 @@ if ( have_posts() ) {
 
         <!-- Thông báo tìm thấy -->
         <div class="search-result-count default-max-width">
-			<p class="text-2xl pt-3 font-thin">
-            <?php
+            <p class="text-2xl pt-3 font-thin">
+                <?php
     printf(
         esc_html(
             /* translators: %d: Trả về số bài viết tìm thấy được */
@@ -42,7 +42,7 @@ if ( have_posts() ) {
         (int) $wp_query->found_posts
     );
     ?>
-	</p>	
+            </p>
         </div><!-- .search-result-count -->
     </div>
 
@@ -59,7 +59,6 @@ if ( have_posts() ) {
 	// Start the Loop.
 	while ( have_posts() ) {
 		the_post();
-
 		/*
 		 * Include the Post-Format-specific template for the content.
 		 * If you want to override this in a child theme, then include a file

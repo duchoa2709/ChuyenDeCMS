@@ -43,7 +43,7 @@ if ($comments) {
         $comment_content = $comment->comment_content;
 
         // Giới hạn số kí tự hiển thị
-        $limit = 60; // Số kí tự bạn muốn giới hạn
+        $limit = 30; // Số kí tự bạn muốn giới hạn
         if (strlen($comment_content) > $limit) {
             $limited_content = substr($comment_content, 0, $limit);
             echo '<p>' . $limited_content . '...</p>';

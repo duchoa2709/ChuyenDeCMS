@@ -23,33 +23,31 @@ get_header(); ?>
 <?php endif; ?>
 
 <div class="home flex w-full justify-center	">
+    <!-- sidebar-left -->
     <?php
 	get_template_part( 'template-parts/sidebar/sidebar-none' );
 	?>
-	<div class="content w-2/4">
-		<?php
-if ( have_posts() ) {
-	
-	// Load posts loop.
-	while ( have_posts() ) {
+    <!-- danh sach bai viet trang chu -->
+    <div class="content w-2/4">
+        <?php
+			if ( have_posts() ) {
+			// Load posts loop.
+			while ( have_posts() ) {
 		the_post();
-		
-		
 		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
 	}
-
 	// Previous/next page navigation.
 	twenty_twenty_one_the_posts_navigation();
-
 } else {
-
 	// If no content, include the "No posts found" template.
 	get_template_part( 'template-parts/content/content-none' );
-
 }
-?>
-	</div>
+		?>
+    </div>
+	<!-- sidebar-right -->
+    <?php
+		get_template_part( 'template-parts/sidebar/sidebar-comment' );
+	?>
+</div>
 <?php
-get_template_part( 'template-parts/sidebar/sidebar-comment' );
-?></div><?php
-get_footer();
+	get_footer();

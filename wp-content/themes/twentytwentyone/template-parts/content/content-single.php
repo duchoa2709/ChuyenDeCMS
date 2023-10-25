@@ -61,6 +61,7 @@
 
     </header><!-- .entry-header -->
 
+    <!-- mo ta ngan -->
     <div class="alignwide">
         <!-- entry-excerpt -->
         <div class="entry-excerpt mb-5">
@@ -71,6 +72,7 @@
                 }
             ?>
         </div>
+        <!--  -->
         <?php
 		the_content();
 

@@ -25,7 +25,7 @@ get_header(); ?>
 <div class="home flex w-full justify-center	">
     <!-- sidebar-left -->
     <?php
-	get_template_part( 'template-parts/sidebar/sidebar-none' );
+	get_template_part( 'template-parts/sidebar/sidebar-archive' );
 	?>
     <!-- danh sach bai viet trang chu -->
     <div class="content w-2/4">
@@ -44,7 +44,7 @@ get_header(); ?>
 }
 		?>
     </div>
-	<!-- sidebar-right -->
+	<!-- sidebar-righ -->
     <?php
 		get_template_part( 'template-parts/sidebar/sidebar-comment' );
 	?>

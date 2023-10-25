@@ -21,7 +21,7 @@
                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 </h1>
             </div>
-            <div class="col-md-2 col-xs-3">
+            <div class="col-md-2 col-xs-3 flex justify-end">
                 <div class="headlinesdate">
                     <div class="headlinesdm">
                         <div class="headlinesday">
@@ -61,8 +61,16 @@
 
     </header><!-- .entry-header -->
 
-
     <div class="alignwide">
+        <!-- entry-excerpt -->
+        <div class="entry-excerpt mb-5">
+            <?php
+                $excerpt = get_the_excerpt();
+                if (!empty($excerpt)) {
+                    echo '<i class="custom-excerpt"> ' . $excerpt . '</i>';
+                }
+            ?>
+        </div>
         <?php
 		the_content();
 

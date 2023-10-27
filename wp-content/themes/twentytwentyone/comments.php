@@ -42,7 +42,8 @@ $twenty_twenty_one_comment_count = get_comments_number();
 				?>
 			<?php endif; ?>
 		</h2><!-- .comments-title -->
-
+		
+		<div class="comment">
 		<ol class="comment-list">
 			<?php
 			wp_list_comments(
@@ -54,6 +55,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			);
 			?>
 		</ol><!-- .comment-list -->
+		</div>
 
 		<?php
 		the_comments_pagination(

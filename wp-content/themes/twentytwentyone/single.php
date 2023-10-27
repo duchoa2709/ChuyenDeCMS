@@ -27,10 +27,16 @@ while ( have_posts() ) :
 		);
 	}
 
+	?>
+	<div class="comment">
+	<?php
 	// If comments are open or there is at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) {
 		comments_template();
 	}
+	?>
+	</div>
+	<?php
 
 	// Previous/next post navigation.
 	$twentytwentyone_next = is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' );

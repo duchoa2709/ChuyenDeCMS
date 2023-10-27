@@ -31,7 +31,7 @@
 }
 </style>
 
-<div class="sidebar-right w-1/4 rounded">
+<div class="sidebar-right w-1/4 rounded pb-4">
     <h1 class="font-bold mb-4">Comments</h1>
     <div class="sidebar-comment">
         <?php

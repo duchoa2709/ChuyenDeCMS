@@ -66,7 +66,7 @@
             </header><!-- .entry-header -->
 
             <!-- mo ta ngan -->
-            <div class="alignwide">
+            <div class="alignwide pt-3">
                 <!-- entry-excerpt -->
                 <div class="entry-excerpt mb-5">
                     <?php
@@ -101,9 +101,17 @@
 
         </article><!-- #post-<?php the_ID(); ?> -->
     </div>
+
+    <!-- sidebar phải  -->
     <div class="w-1/4 ml-20">
+    <h1 class="pb-4 font-bold text-2xl">BÀI VIẾT MỚI NHẤT</h1>
         <?php
 		    get_template_part( 'template-parts/sidebar/sidebar-recentpost' );
 	    ?>
     </div>
+</div>
+<div class="lastPost">
+    <?php
+        get_template_part( 'template-parts/lastPost/lastPost' );
+    ?>
 </div>

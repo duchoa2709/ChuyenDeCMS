@@ -91,7 +91,7 @@
 		?>
             </div><!-- .entry-content -->
 
-            <footer class="entry-footer default-max-width">
+            <footer class="entry-footer font-bold text-right">
                 <?php twenty_twenty_one_entry_meta_footer(); ?>
             </footer><!-- .entry-footer -->
 
@@ -113,5 +113,11 @@
 <div class="lastPost">
     <?php
         get_template_part( 'template-parts/lastPost/lastPost' );
+    ?>
+</div>
+
+<div class="testcomment">
+    <?php
+        get_template_part( 'template-parts/sidebar/sidebar-comment-search' );
     ?>
 </div>

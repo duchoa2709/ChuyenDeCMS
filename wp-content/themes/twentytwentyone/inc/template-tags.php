@@ -104,7 +104,7 @@ if ( ! function_exists( 'twenty_twenty_one_entry_meta_footer' ) ) {
 				if ( $categories_list ) {
 					printf(
 						/* translators: %s: List of categories. */
-						'<span class="cat-links">' . esc_html__( 'Categorized as %s', 'twentytwentyone' ) . ' </span>',
+						'<span class="cat-links">' . esc_html__( 'Categorized  as %s', 'twentytwentyone' ) . ' </span>',
 						$categories_list // phpcs:ignore WordPress.Security.EscapeOutput
 					);
 				}

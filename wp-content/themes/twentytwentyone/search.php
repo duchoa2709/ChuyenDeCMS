@@ -64,7 +64,29 @@ if ( have_posts() ) {
 		 * If you want to override this in a child theme, then include a file
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
-		get_template_part( 'template-parts/content/content-excerpt', get_post_format() );
+
+?>
+<div class="flex">
+    <div class="w-1/4">
+
+
+    </div>
+
+    <div class="w-2/4">
+        <?php
+            get_template_part( 'template-parts/content/content-excerpt', get_post_format() );
+        ?>
+    </div>
+
+    <div class="testcomment w-1/4 ">
+
+        <?php
+            get_template_part( 'template-parts/sidebar/sidebar-comment-search' );
+        ?>
+
+    </div>
+</div>
+<?php
 	} // End the loop.
 
 	// Previous/next page navigation.

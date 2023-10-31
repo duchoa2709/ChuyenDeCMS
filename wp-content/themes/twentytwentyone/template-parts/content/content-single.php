@@ -9,15 +9,19 @@
  * @since Twenty Twenty-One 1.0
  */
 
+
 ?>
 <div class="flex">
+
 
     <div class="w-1/4"></div>
     <div class="w-3/4">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="flex"></div>
 
+
             <header class="alignwide detail">
+
 
                 <div class="row title">
                     <div class="col-md-10 col-xs-9">
@@ -30,30 +34,33 @@
                             <div class="headlinesdm">
                                 <div class="headlinesday">
 
+
                                     <!-- lấy ngày bài viết -->
                                     <?php
                             $created_date = get_the_date('d');
                             echo $created_date;
-							?>
+                            ?>
+
 
                                 </div>
                                 <div class="headlinesmonth">
                                     <?php
                             $created_date = get_the_date('m');
                             echo $created_date;
-							?>
+                            ?>
                                 </div>
                             </div>
                             <div class="headlinesyear">'
                                 <?php
                             $created_date = get_the_date('y');
                             echo $created_date;
-							?>
+                            ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <?php twenty_twenty_one_post_thumbnail(); ?>
+
 
                 <!-- line  -->
                 <div class="row">
@@ -63,7 +70,9 @@
                 </div>
                 <!-- end line -->
 
+
             </header><!-- .entry-header -->
+
 
             <!-- mo ta ngan -->
             <div class="alignwide pt-3">
@@ -78,46 +87,46 @@
                 </div>
                 <!--  -->
                 <?php
-		the_content();
+        the_content();
 
-		wp_link_pages(
-			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
-				'after'    => '</nav>',
-				/* translators: %: Page number. */
-				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
-			)
-		);
-		?>
+
+        wp_link_pages(
+            array(
+                'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+                'after'    => '</nav>',
+                /* translators: %: Page number. */
+                'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+            )
+        );
+        ?>
             </div><!-- .entry-content -->
+
 
             <footer class="entry-footer font-bold text-right">
                 <?php twenty_twenty_one_entry_meta_footer(); ?>
             </footer><!-- .entry-footer -->
 
+
             <?php if ( ! is_singular( 'attachment' ) ) : ?>
             <?php get_template_part( 'template-parts/post/author-bio' ); ?>
             <?php endif; ?>
 
+
         </article><!-- #post-<?php the_ID(); ?> -->
     </div>
+
 
     <!-- sidebar phải  -->
     <div class="w-1/4 ml-20">
     <h1 class="pb-4 font-bold text-2xl">BÀI VIẾT MỚI NHẤT</h1>
         <?php
-		    get_template_part( 'template-parts/sidebar/sidebar-recentpost' );
-	    ?>
+            get_template_part( 'template-parts/sidebar/sidebar-recentpost' );
+        ?>
     </div>
 </div>
+
 <div class="lastPost">
     <?php
         get_template_part( 'template-parts/lastPost/lastPost' );
-    ?>
-</div>
-
-<div class="testcomment">
-    <?php
-        get_template_part( 'template-parts/sidebar/sidebar-comment-search' );
     ?>
 </div>

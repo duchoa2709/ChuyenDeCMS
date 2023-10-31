@@ -28,7 +28,6 @@
     </script>
 
 
-
     <script src="https://cdn.tailwindcss.com"></script>
     <?php wp_head(); ?>
 </head>

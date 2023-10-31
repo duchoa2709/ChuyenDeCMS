@@ -44,8 +44,9 @@ get_header(); ?>
 }
 		?>
     </div>
-	<!-- sidebar-righ -->
+	<!-- sidebar-right -->
     <?php
+		// Gọi file sidebar-comment.php để hiển thị 
 		get_template_part( 'template-parts/sidebar/sidebar-comment' );
 	?>
 </div>

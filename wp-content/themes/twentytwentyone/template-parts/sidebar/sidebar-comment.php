@@ -35,26 +35,24 @@
     <h1 class="font-bold mb-4">Comments</h1>
     <div class="sidebar-comment">
         <?php
-$comments = get_comments(); // Lấy danh sách bình luận cho bài viết
+$comments = get_comments(); // Lấy danh sách bình luận cho các bài viết trong trang web
+if ($comments) { // Nếu có bình luận thì hiển thị
+    foreach ($comments as $comment) { // Lặp danh sách bình luận
 
-if ($comments) {
-    foreach ($comments as $comment) {
         echo '<div class="comment pl-3 py-1 border-b-2 text-[#488dc6] font-medium">';
-        $comment_content = $comment->comment_content;
+        $comment_content = $comment->comment_content;// Lấy nội dung bình luận
 
         // Giới hạn số kí tự hiển thị
         $limit = 30; // Số kí tự bạn muốn giới hạn
-        if (strlen($comment_content) > $limit) {
+        if (strlen($comment_content) > $limit) { // Nếu nội dung bình luận dài hơn số kí tự giới hạn
             $limited_content = substr($comment_content, 0, $limit);
             echo '<p>' . $limited_content . '...</p>';
-        } else {
+        } else { // Nếu nội dung bình luận ngắn hơn số kí tự giới hạn
             echo '<p>' . $comment_content . '</p>';
         }
-
         echo '</div>';
     }
 }
-
 ?>
     </div>
 </div>

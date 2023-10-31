@@ -16,6 +16,48 @@
  * Generate a unique ID for each form and a string containing an aria-label
  * if one was passed to get_search_form() in the args array.
  */
+
+?>
+<style>
+    .page-ct-search{
+	background-color: #fff;
+	text-align: center;
+	padding: 50px 0;
+}
+.page-description-search{
+	color:red;
+	font-weight:bold;
+}
+.page-title{
+	font-size:40px
+}
+.search-form{
+	align-items:center;
+}
+.search_form .form{
+	padding: 15px;
+	background:#fff;
+	
+}
+.search_form .search-field{
+	margin:0;
+	margin-right: 10px;
+	border:none;
+}
+.search-form .search-submit{
+	margin:0;
+}
+.search-form .img-search{
+	display:flex;
+	width:30px;
+	height:30px;
+}
+.search_form .search-submit{
+	padding:9px 20px
+}
+</style>
+
+<?php
 $twentytwentyone_unique_id = wp_unique_id( 'search-form-' );
 
 $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . esc_attr( $args['aria_label'] ) . '"' : '';

@@ -11,6 +11,7 @@
 
 get_header();
 
+
 if ( have_posts() ) {
 	?>
 <!-- thay đổi thông báo search được tìm thấy (đã chỉnh sửa) -->
@@ -33,8 +34,8 @@ if ( have_posts() ) {
         esc_html(
             /* translators: %d: Trả về số bài viết tìm thấy được */
             _n(
-                'We found %d result for your search.',
-                'We found %d results for your search.',
+                'We found %d result for your search.', //thấy được 1 bài viết
+                'We found %d results for your search.', // thấy được nhiều bài viết
                 (int) $wp_query->found_posts,
                 'twentytwentyone'
             )
@@ -45,7 +46,6 @@ if ( have_posts() ) {
             </p>
         </div><!-- .search-result-count -->
     </div>
-
 </h1>
 
 <!-- Thêm search vào trang tìm thấy kế quả -->

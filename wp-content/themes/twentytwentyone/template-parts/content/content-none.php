@@ -16,12 +16,12 @@
         <?php
         // Kiểm tra nếu có tìm kiếm
         if (is_search()) :
-            echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search' . '</span>';
+            echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search:' . '</span>' ."<b>";
             printf(
                 esc_html__('"%s"', 'twentytwentyone'),
                 '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
             );
-            echo '</h1>';
+            echo '</b>' . '</h1>';
         else :
             // Nếu không phải trang kết quả tìm kiếm, hiển thị tiêu đề mặc định
             echo '<h1 class="page-title">' . esc_html_e('Nothing here', 'twentytwentyone') . '</h1>';

@@ -18,12 +18,12 @@ if ( have_posts() ) {
 <h1 class="page-title">
     <div class="page-ct-search">
         <?php
-			echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search' . '</span>';
+			echo '<h1 class="page-title">'.'<span class="page-description page-description-search">' . 'Search:' . '</span>' ."<b>";
             printf(
                 esc_html__('"%s"', 'twentytwentyone'),
                 '<span class="page-description search-term">' . esc_html(get_search_query()) . '</span>'
             );
-            echo '</h1>';
+            echo '</b>' . '</h1>';
 			?>
 
         <!-- Thông báo tìm thấy -->

@@ -256,6 +256,16 @@
     width: 85%;
     color: white;
 }
+
+.newsall {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background: #62c6c8;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size:10px;
+    }
 </style>
 <?php
 /**
@@ -318,6 +328,9 @@ $post_link = get_permalink();
 
 
 <?php
-}
+}//end foreach
 wp_reset_postdata(); // Đặt lại dữ liệu bài viết
 }
+?>
+<a class="newsall  text-white"  href="http://localhost/ChuyenDeCMS/">Xem tất cả tin tức</a>
+<?php

@@ -1,6 +1,4 @@
 /* Footer */
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
 
 #footer a {
     position: relative;
@@ -197,4 +195,14 @@ section .section-title {
         padding-bottom: 0px;
         margin-bottom: 10px;
     }
+}
+.entry-header{
+    margin: 0 !important;
+}
+.home .content article{
+    margin-top: -14.3px;
+
+}
+.rounded{
+    border-radius: 10px;
 }

@@ -55,46 +55,59 @@ if ( have_posts() ) {
 			get_search_form(); 
 		?>
 </div>
-<?php
-	// Start the Loop.
-	while ( have_posts() ) {
-		the_post();
-		/*
-		 * Include the Post-Format-specific template for the content.
-		 * If you want to override this in a child theme, then include a file
-		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-		 */
-
-?>
 <div class="flex">
     <div class="w-1/4">
-
-
+        <!-- Phần tử 1 -->
     </div>
-
     <div class="w-2/4">
         <?php
+        // Start the Loop.
+        while ( have_posts() ) {
+            the_post();
+            /*
+             * Include the Post-Format-specific template for the content.
+             * If you want to override this in a child theme, then include a file
+             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+             */
             get_template_part( 'template-parts/content/content-excerpt', get_post_format() );
+        } // End the loop.
+
+        // Previous/next page navigation.
+        twenty_twenty_one_the_posts_navigation();
+
+        // If no content, include the "No posts found" template.
+    }else {
+            get_template_part( 'template-parts/content/content-none' );
+        }
         ?>
     </div>
-
-    <div class="testcomment w-1/4 ">
-
+    <?php
+        if (have_posts()) {
+        // Có kết quả tìm kiếm
+    ?>
+    <div class="w-1/4">
         <?php
-            get_template_part( 'template-parts/sidebar/sidebar-comment-search' );
-        ?>
-
+                get_template_part('template-parts/sidebar/sidebar-comment-search');
+            ?>
     </div>
 </div>
 <?php
-	} // End the loop.
+    } else {
+        // Không có kết quả tìm kiếm
+        ?>
+<div class="flex">
+    <div class="w-1/4"></div>
+    <div class="w-2/4"></div>
+    <div class="w-1/4">
+        <?php
+                get_template_part('template-parts/sidebar/sidebar-comment-search');
+            ?>
+    </div>
+</div>
+<?php
+    }
+    ?>
 
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
 
-	// If no content, include the "No posts found" template.
-} else {
-	get_template_part( 'template-parts/content/content-none' );
-}
-
+<?php
 get_footer();

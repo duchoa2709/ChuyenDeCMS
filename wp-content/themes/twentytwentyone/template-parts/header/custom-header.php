@@ -4,248 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    <!-- Add Bootstrap 5.0.2 CSS link here -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Add Font Awesome CSS link here -->
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <style>
-    
-    body{
-        background-color: #d1e4dd;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.fa,
-    .navbar-icon-top .navbar-nav>li>a>.glyphicon {
-        position: relative;
-        width: 36px;
-        font-size: 24px;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.fa>.badge,
-    .navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-        position: absolute;
-        right: 0;
-        font-family: sans-serif;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.fa {
-        top: 3px;
-        line-height: 12px;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.fa>.badge {
-        top: -10px;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.glyphicon {
-        top: 6px;
-        line-height: 6px;
-    }
-
-
-    .navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-        top: -16px;
-    }
-
-
-    @media (min-width: 768px) {
-        .navbar-icon-top .navbar-brand {
-            padding: 25px 15px;
-        }
-
-
-        .navbar-icon-top .navbar-text {
-            margin-top: 25px;
-            margin-bottom: 25px;
-        }
-
-
-        .navbar-icon-top .navbar-btn,
-        .navbar-icon-top .navbar-form {
-            margin-top: 18px;
-            margin-bottom: 18px;
-        }
-
-
-        .navbar-icon-top .navbar-nav>li>a {
-            text-align: center;
-            display: table-cell;
-            height: 70px;
-            vertical-align: middle;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-
-
-        .navbar-icon-top .navbar-nav>li>a>.fa,
-        .navbar-icon-top .navbar-nav>li>a>.glyphicon {
-            display: block;
-            width: 48px;
-            margin: 2px auto 4px auto;
-            top: 0;
-            line-height: 24px;
-        }
-
-
-        .navbar-icon-top .navbar-nav>li>a>.fa>.badge,
-        .navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-            top: -7px;
-        }
-    }
-
-
-    .search-form {
-        width: 20%;
-        margin-left: 8%;
-    }
-
-
-    .search-form input {
-        height: 42px;
-    }
-
-
-    .btn-default {
-        margin-top: 10px;
-        width: 25%;
-        height: 35px;
-    }
-
-    .search-field {
-        height: 35px;
-    }
-
-    .hh {
-        margin-left: 55%;
-        text-decoration: none;
-    }
-
-
-    nav .container-fluid .navbar-right {
-        margin-top: -50px;
-    }
-
-
-    .menu_nav {
-        margin-right: 20px;
-    }
-
-
-    .hh .primary-navigation .primary-menu-container {
-        justify-content: center;
-        display: flex;
-        padding-left: 100px;
-    }
-
-    .hh .primary-menu-container #primary-menu-list .menu-item a {
-        font-size: 1.5rem;
-    }
-
-    .navbar .container-fluid .cc2 {
-        padding-top: 1%;
-        font-size: 2rem;
-    }
-
-    .navbar .container-fluid .cc {
-        padding-top: 1%;
-        font-size: 1.5rem;
-    }
-
-    .search-form {
-        width: 20%;
-        margin-left: 4%;
-        position: absolute;
-        padding-bottom: 0.5%;
-    }
-
-    .dropdown-menu {
-        position: absolute !important;
-        left: -58px !important;
-    }
-
-    @media (min-width: 768px) {
-        .navbar-icon-top .navbar-nav>li>a {
-            text-align: center;
-            display: table-cell;
-            height: 0px !important;
-            vertical-align: middle;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    }
-
-    /* .primary-navigation .current-menu-item > a:first-child:hover, .primary-navigation .current_page_item > a:first-child:hover {
-    text-decoration: unset !important;
-    text-decoration-style: unset !important;
-} */
-    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-icon-top navbar-expand-md navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand cc2" href="<?php site_url(); ?>">Group F</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active cc" aria-current="page" href="#">Home</a>
-                    </li>
-                </ul>
-                <form style="position:absolute" role="search" method="get" class="search-form form"
-                    action="http://localhost/ChuyenDeCMS/">
-                    <img src="./wp-content/themes/twentytwentyone/assets/images/search.png" alt="" class="img-search">
-                    <input type="search" id="search-form-1" class="search-field" value="" name="s"
-                        placeholder="Search topics or keywords">
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                <div class="hh">
-                    <?php get_template_part('template-parts/header/site-nav'); ?>
+
+    <div class="fixed left-0 top-0 w-full h-20 flex bg-[#f8f8f8]">
+        <div class="container flex items-center m-auto justify-between md:px-2 px-4">
+
+            <div class="flex items-center">
+                <span class="text-lg font-medium">GROUP F</span>
+                <div class="chalon md:block hidden">
+                    <div class="cha flex ml-5  ">
+                        <div class="box   ">
+                            <a class="cursor-pointer hover:text-gray-900  px-4 py-8 bg-[#e7e7e7]" href="#">Home</a>
+                        </div>
+                        <div class="search  ml-5 ">
+                            <form class="navbar-form navbar-left flex">
+                                <div class="form-group">
+                                    <input
+                                        class="placeholder:italic  h-[32px]  block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                                        placeholder="Search" type="text" name="search" />
+                                </div>
+                                <button type="submit"
+                                    class="btn h-[32px]  border-[1px] border-[#cccccc] ml-1 px-2 btn-default rounded-md">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <ul class="navbar-nav ms-auto">
+
+
+            </div>
+
+            <div class="md:flex hidden space-x-6 text-gray-600">
+
+
+                <a class="cursor-pointer hover:text-gray-900 pt-[8px]" href="#">Features</a>
+                <a class="cursor-pointer hover:text-gray-900 pt-[8px]" href="#">Templates</a>
+                <a class="cursor-pointer hover:text-gray-900 pt-[8px]" href="#">Resources</a>
+                <a class="cursor-pointer hover:text-gray-900 pt-[8px]" href="#">Pricing</a>
+                <ul class="navbar-nav ms-auto space-x-4 flex ">
                     <li class="menu_nav">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-ellipsis-h"></i>
-                            Menu
+                        <a class="nav-link text-center flex-col" href="#">
+                            <i class="fas fa-ellipsis-h flex justify-center text-xl"></i>
+                            <p class="text-xs">Menu</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/ChuyenDeCMS/?s=">
-                            <i class="fa fa-search"></i>
-                            Search
+
+                        <a class="nav-link nav-link text-center flex-col" href="http://localhost/wordpress_ver2/?s=">
+                            <i class="fas fa-search flex justify-center text-xl"></i>
+
+                            <p class="text-xs"> Search</p>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa fa-user-circle"></i> <!-- Sửa thành "fa-user-circle" -->
-                            Account
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li class="nav-item dropdown relative group">
+                        <button
+                            class="nav-link group-hover:bg-gray-200 group-hover:text-gray-800  text-center flex-col">
+                            <i class="fas fa-user-circle text-xl"></i>
+
+                            <p class="text-xs"> Account</p>
+                        </button>
+                        <ul
+                            class="dropdown-menu hidden absolute p-2 -left-[74px] mt-2 space-y-1 bg-white border rounded-lg group-hover:block">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li> <!-- Sửa "class" thành "class=" -->
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                                <hr class="dropdown-divider border-t border-gray-200">
                             </li>
                             <li><a class="dropdown-item" href="#">Separated link</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+
+
+
+
+            <div class="md:hidden flex items-center space-x-4">
+                <button class="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
-    </nav>
-    <!-- Add Bootstrap 5.0.2 JS script link here -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    </div>
+
+
+
+
 </body>
 
 </html>

@@ -97,7 +97,7 @@ body {
                 if ($comment->comment_parent == 0) {
                     $comment_ids[] = $comment->comment_ID;
                     ?>
-<div class="row bg-white">
+<div class="row bg-white container">
 
     <div class="media comment-box flex">
         <div class="media-left w-1/2">

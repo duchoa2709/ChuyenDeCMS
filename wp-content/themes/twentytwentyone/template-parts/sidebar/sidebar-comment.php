@@ -23,7 +23,7 @@
 .sidebar-right>h1:before{
     position: absolute;
     content: "";
-    width: 70%;
+    width: 60%;
     height: 40px;
 
     padding-bottom: 10px;

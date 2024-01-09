@@ -296,7 +296,7 @@ setup_postdata($post);
 
 
 $post_time = get_the_time('y-m-d H:i:s');
-$post_year = date('y', strtotime($post_time));
+$post_year = date('Y', strtotime($post_time));
 $post_month = date('m', strtotime($post_time));
 $post_day = date('d', strtotime($post_time));
 $post_link = get_permalink();

@@ -46,7 +46,7 @@
                             <div class="headlinesyear">'
                                 <!-- Lấy năm bài viết -->
                                 <?php
-                                    $created_date = get_the_date('y');
+                                    $created_date = get_the_date('Y');
                                     echo $created_date;
                                 ?>
                             </div>

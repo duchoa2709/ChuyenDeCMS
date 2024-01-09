@@ -45,7 +45,7 @@
             <div class="container h-16 flex items-center  m-auto justify-between ">
 
                 <div class="flex ">
-                    <span class="text-lg font-medium">GROUP F</span>
+                    <span class="text-lg font-medium">GROUP F1</span>
                     <div class="chalon md:block hidden">
                         <div class="cha flex ml-5 ">
                             <div class="box   ">

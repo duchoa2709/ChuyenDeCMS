@@ -62,13 +62,13 @@
                                 <?php the_title(); ?>
                             </a>
                             <a href="#" class="float-right hover_link">
-                                <?php the_time('F j, Y'); ?>
+                                <?php the_time('j F, Y'); ?>
                             </a>
                         </div>
                         <p>
                             <?php
                             $post_content = get_the_content();
-                            $limit = 180;
+                            $limit = 30;
                             if (strlen($post_content) >= $limit) {
                                 $limited_content = substr($post_content, 0, $limit);
                                 echo $limited_content . "[...]";

@@ -107,7 +107,7 @@ body {
         </div>
         <div class="media-body w-full">
             <h4 class="media-heading">
-                <?php echo $comment->comment_author; ?>
+                <?php echo $comment->comment_author; ?>!
             </h4>
             <p>
                 <?php echo $comment->comment_content; ?>
@@ -125,7 +125,7 @@ body {
                 </div>
                 <div class="media-body w-full">
                     <h4 class="media-heading">
-                        <?php echo $reply->comment_author; ?>
+                        <?php echo $reply->comment_author; ?>!
                     </h4>
                     <p class="non">
                         <?php echo $reply->comment_content; ?>
